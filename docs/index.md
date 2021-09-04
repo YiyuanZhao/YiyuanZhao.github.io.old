@@ -19,7 +19,7 @@ author: Yiyuan
 
 ## 数据可视化
 
-### [基于MATLAB的数据可视化App]()
+### [基于MATLAB的数据可视化App](./project/matlabDataVisualization)
 使用Matlab App Designer设计了对DFT计算数据处理和可视化的App，代码量~3000行，处理数据集规模~30MB。
 
 ### [基于Power BI的数据可视化]()

@@ -41,6 +41,8 @@ show_downloads: true
 
 github:
   repository_url: https://github.com/YiyuanZhao/YiyuanZhao.github.io/tree/gh-pages/docs
+  repository_name: https://yiyuanzhao.github.io/
+  owner_url: https://github.com/YiyuanZhao
 
 # Exclude from processing.
 # The following items will not be processed, by default.

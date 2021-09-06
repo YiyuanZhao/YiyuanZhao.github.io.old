@@ -39,6 +39,9 @@ kramdown:
 
 show_downloads: true
 
+github:
+  repository_url: https://github.com/YiyuanZhao/YiyuanZhao.github.io/tree/gh-pages/docs
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

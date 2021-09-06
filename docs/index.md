@@ -27,7 +27,7 @@ author: Yiyuan
 
 ## 自动化测试
 
-### [基于Selenium的安卓App自动化测试]()
+### [基于Selenium的安卓App自动化测试](./project/seleniumAutomation)
 利用Appium的Python接口，使用虚拟机实现了安卓平台某app每日积分获取的自动化测试脚本。
 
 ## 运营维护

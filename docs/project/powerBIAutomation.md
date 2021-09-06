@@ -7,11 +7,13 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP
 # 背景
 项目[基于MATLAB的数据可视化App](./matlabDataVisualization)解决了基本的数据可视化需求。但对于各种构型(Configuration)的计算，有时需要根据研究的需求进行对比，以下是我研究中遇到的实际层次结构：
 
+```
 ── material  
    └── Magneti_Configuration  
        └── layerDistance  
            └── AtomNumber  
                └── dosData  
+```
 
 每个层次结构包含的数据集大小为：
 
@@ -37,8 +39,9 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP
  - 在power BI中建立数据库查询，设计展示方式并发布。
 
 # 源代码
- - 对于数据预处理部分，可以[在这里](https://github.com/YiyuanZhao/ProfileProjectSourceCode)查看源代码。
- - 对于power BI部分，由于powerbi的策略限制，个人用户无法将报告发布到web，你可以[在这里](/source/powerbiDemo.pbix)下载源文件，并[下载power BI桌面端](https://powerbi.microsoft.com/zh-cn/desktop/)来查看数据可视化结果。
+ - 对于数据预处理部分，可以[在这里](https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/powerBIAutomation)查看源代码。
+ - 对于power BI部分，由于powerbi的策略限制，个人用户无法将报告发布到web，你可以[在这里](/resource/powerbiDemo.pbix)下载源文件，并[下载power BI桌面端](https://powerbi.microsoft.com/zh-cn/desktop/)来查看数据可视化结果。
+
 # 演示Demo
 环境需求：Windows，g++
 
@@ -86,8 +89,22 @@ lines terminated by '\r\n';
 ```
 
 通过Power BI的database connector，链接到MySQL数据库，选择合适的数据，制作dashboard即可完成数据的可视化操作。
+
+例如，可以使用筛选器与组合图表，研究不同材料、不同位置原子的能量（左上）、磁矩大小（左下）、不同磁性构型的能量差（右上）和不同轨道的磁矩贡献（右下）。
+
+![](/image/powerbi_energy.gif)
+
+对于原子的总态密度(tDOS)，可以方便的看到数据点的具体分布和数据点的具体信息。
+
+![](/image/powerbi_tdos.gif)
+
+对于不同的构型，也可以很方便的查看不同轨道原子的贡献。
+
+![](/image/powerbi_pdos.gif)
+
 * * *
 
 # 技术栈
 C++，MySQL，Power BI
+
 ### [back](/)

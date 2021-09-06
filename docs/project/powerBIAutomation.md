@@ -7,11 +7,11 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP
 # 背景
 项目[基于MATLAB的数据可视化App](./matlabDataVisualization)解决了基本的数据可视化需求。但对于各种构型(Configuration)的计算，有时需要根据研究的需求进行对比，以下是我研究中遇到的实际层次结构：
 
-── material
-   └── Magneti_Configuration
-       └── layerDistance
-           └── AtomNumber
-               └── dosData
+── material  
+   └── Magneti_Configuration  
+       └── layerDistance  
+           └── AtomNumber  
+               └── dosData  
 
 每个层次结构包含的数据集大小为：
 
@@ -37,16 +37,17 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP
  - 在power BI中建立数据库查询，设计展示方式并发布。
 
 # 源代码
-powerbi
+ - 对于数据预处理部分，可以[在这里](https://github.com/YiyuanZhao/ProfileProjectSourceCode)查看源代码。
+ - 对于power BI部分，由于powerbi的策略限制，个人用户无法将报告发布到web，你可以[在这里](/source/powerbiDemo.pbix)下载源文件，并[下载power BI桌面端](https://powerbi.microsoft.com/zh-cn/desktop/)来查看数据可视化结果。
 # 演示Demo
 环境需求：Windows，g++
 
 powershell:
-```powershell
+```shell
 git clone git@github.com:YiyuanZhao/ProfileProjectSourceCode.git
 cd ./ProfileProjectSourceCode/powerBIAutomation/src
 g++ -g processDoscar.cpp -o processDoscar.exe -Wall -static-libgcc
-.\processDoscar.exe "VSe2" "Primary" "3.12" "NM"
+./processDoscar.exe "VSe2" "Primary" "3.12" "NM"
 mysql mysql  -u <USERNAME> --local-infile=1 -p
 ```
 在MySQL中建立数据库，表格和导入数据：

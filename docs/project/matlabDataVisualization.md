@@ -35,7 +35,7 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP
 ![tdos](/image/app_3dBandStructure.gif)
 
 # 源代码
-参见页面顶部[View the project code on GitHub]()按钮。
+[View the project code on GitHub](https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP_Plotter)。
 # 演示Demo
 Notes: 需要MATLAB R2020a版本/Windows
 

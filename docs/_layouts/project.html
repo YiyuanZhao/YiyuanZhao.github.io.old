@@ -23,8 +23,8 @@
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
       {% if site.show_downloads %}
-        <a href="{{ site.github.repository_url }}/src/" class="btn">View the project code on GitHub</a>
-        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+        <a href="{{page.code_url | default: site.github.repository_url }}" class="btn">View the project code on GitHub</a>
+        <!-- <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a> -->
       {% endif %}
     </header>
 

@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  基于MATLAB的数据可视化App
+code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP_Plotter"
 ---
 
 # 背景
@@ -13,15 +14,51 @@ title:  基于MATLAB的数据可视化App
 
 对于DFT计算，有多种需要可视化的计算结果，简要介绍如下：
  - 总态密度(total density of states, tDOS)：电子态在给定能量区域内的分布，在所有能量区域的积分为总电子数。
- - 分波投影态密度(projected density of states)：电子态在不同轨道(s,p,d)上投影在给定能量区域内的分布，显示了电子的轨道分布。
  - 能带结构(band structure)：在k空间内沿着特定路径上，电子的E-k(色散)关系，能带结构决定了材料的诸多物理性质(如导电性)。
+
+![tdos](/image/app_tdos.gif)
+
+ - 分波投影态密度(projected density of states)：电子态在不同轨道(s,p,d)上投影在给定能量区域内的分布，显示了电子的轨道分布。
+
+![tdos](/image/app_pdos.gif)
+
  - Fat Band：包含k空间内电子贡献的能带结构，可以给出能带结构中每个轨道投影的贡献。
+
+![tdos](/image/app_fatband.gif)
+
  - 瓦尼尔拟合(Wannier90 Fit)：在紧束缚模型下画出的能带结构与DFT能带结构的结果比较。
+
+![tdos](/image/app_wannierFit.gif)
+
  - 3D 能带结构：在整个k空间内的色散关系。
 
-# 源代码
+![tdos](/image/app_3dBandStructure.gif)
 
+# 源代码
+参见页面顶部[View the project code on GitHub]()按钮。
 # 演示Demo
+Notes: 需要MATLAB R2020a版本/Windows
+
+Powershell:
+```shell
+git clone git@github.com:YiyuanZhao/ProfileProjectSourceCode.git
+cd ./ProfileProjectSourceCode/VASP_Plotter/src
+matlab .
+```
+接下来在打开的MATLAB中输入：
+
+MATLAB Terminal
+```matlab
+VaspPlotter
+```
+在新打开的APP Designer界面中按``F5``启动App。
+
+在打开的界面中选择``Select Folder``，选择包含数据文件的文件夹，等待读入后即可开始可视化过程。
+
+![tdos](/image/app_init.gif)
+
+# 技术栈
+MATLAB
 
 * * *
 ### [back](/)

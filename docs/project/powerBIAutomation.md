@@ -37,7 +37,7 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/VASP
  - 在power BI中建立数据库查询，设计展示方式并发布。
 
 # 源代码
-
+powerbi
 # 演示Demo
 环境需求：Windows，g++
 

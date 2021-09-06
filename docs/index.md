@@ -31,4 +31,4 @@ author: Yiyuan
 利用Appium的Python接口，使用虚拟机实现了安卓平台某app每日积分获取的自动化测试脚本。
 
 ## 运营维护
-### [Linux自动化shell脚本](./project/shellScriptAutomation.md)
+### [Linux自动化shell脚本](./project/shellScriptAutomation)

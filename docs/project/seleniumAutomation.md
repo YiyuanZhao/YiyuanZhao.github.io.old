@@ -31,10 +31,10 @@ Notes: 与自动驾驶相似，尽管脚本具有全自动化的功能特性，�
 你可以[在这里](https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/seleniumAutomation)下载项目的源代码。
 
 # 环境需求
-Android Debug Bridge version 1.0.41 
-Android_Studio 模拟器(Pixel 2 API 30, Android 11.0(x86), API 30)
-Appium v1.20.2
-cn.xuexi.android.apk version 2.24.0
+Android Debug Bridge version 1.0.41  
+Android_Studio 模拟器(Pixel 2 API 30, Android 11.0(x86), API 30)  
+Appium v1.20.2  
+cn.xuexi.android.apk version 2.24.0  
 
 
 * * *

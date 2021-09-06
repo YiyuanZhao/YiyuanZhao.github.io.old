@@ -32,3 +32,4 @@ author: Yiyuan
 
 ## 运营维护
 ### [Linux自动化shell脚本](./project/shellScriptAutomation)
+使用shell脚本，来建立集群中重复命令行任务的简化，和集群的运行状态监视。

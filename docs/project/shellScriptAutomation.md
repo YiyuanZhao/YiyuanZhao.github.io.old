@@ -15,7 +15,7 @@ code_url: "https://github.com/YiyuanZhao/ProfileProjectSourceCode/tree/main/shel
 你可以使用以下命令克隆仓库：
 ```shell
 git clone git@github.com:YiyuanZhao/ProfileProjectSourceCode.git
-repositoryRoot = $(pwd)
+repositoryRoot=$(pwd)
 ```
 
 ## 计算弛豫前后的晶格变化

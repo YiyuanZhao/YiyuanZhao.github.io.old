@@ -54,4 +54,35 @@ bash dataSummary.sh
 # 技术栈
 shell，powershell
 
+# shell脚本中涉及的命令TOP20
+迄今为止，在自动化方向，已经设计了30+的脚本，下面给出在脚本文件夹下，对所有``.sh``文件中，所有命令频次汇总（不完全统计）。在文件下运行下列命令：
+
+```shell
+grep -v '#' ./*.sh| sed -E "s/ +/\n/g" | grep -E "^[a-z]+$" | sort | uniq -c | sort -rg | head -20
+```
+其中``grep -v '#'``筛选了所有的非注释行，``sed -E "s/ +/\n/g"``以一个（或多个）空格为单位进行语义分割，替换为换行符，方便进一步处理，``grep -E "^[a-z]+$"``剔除了定义的变量(变量定义中会出现``=``而不会被选中)、字符串变量(不以字母开始)、文件路径(路径中含有``/``而被剔除)，``sort``对所有行按字母顺序进行初步排序，``uniq -c``统计每个词的出现频率，``sort -rg``将字符串视作数字(第一部分是纯数字)并降序排序，``head -20``筛选出排序后的前20项。
+
+命令运行的结果如下：
+```shell
+     88 awk
+     73 grep
+     68 echo
+     36 shift
+     29 sed
+     27 tail
+     27 in
+     26 then
+     24 if
+     24 fi
+     20 else
+     18 nl
+     13 print
+     13 cd
+     12 esac
+     12 cat
+     12 case
+     11 source
+      9 exit
+      7 not
+```
 ### [back](/)

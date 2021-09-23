@@ -52,7 +52,8 @@ __重要提示：在配置过程中，务必注意公钥和私钥的区别，服
 #### 生成公钥/私钥对
 1. 在本地端按`Win+R`，输入`powershell`打开命令行界面。
 2. 在本地端的`powershell`命令行中输入`ssh-keygen.exe`，一路回车选择默认设置即可。
-```
+
+```powershell
 PS C:\Users\SCES> ssh-keygen.exe
 Generating public/private rsa key pair.
 Enter file in which to save the key (C:\Users\SCES/.ssh/id_rsa):
@@ -67,10 +68,12 @@ The key's randomart image is:
 ******
 +----[SHA256]-----+
 ```
+
 #### 编辑ssh的配置文件 上传公钥到服务器
 1. 在本地端进入第3行中给出的路径(默认为C:\Users\"用户名(需根据情况替换)"\.ssh)。
 2. 新建一个名为config的文档(没有后缀名)，使用记事本打开。
 3. 填入服务端的相关信息，例子如下所示：
+
 ```powershell
 Host cluster
     HostName 10.30.13.118
@@ -80,7 +83,8 @@ Host cluster
 ```
 其中Host是你设定的服务端别名，ssh配置完成后使用`ssh 别名`就可以直接登录服务器，无需输入ip和账户名称。User是账户名称，HostName是服务器端的ip地址，IdentityFile是ssh-add.exe生成的私钥的路径。
 
-4. 在本地端的`powershell`命令行中输入`scp`命令，将公钥上传到服务器。例子为：
+1. 在本地端的`powershell`命令行中输入`scp`命令，将公钥上传到服务器。例子为：
+
 ```powershell
 scp "C:\Users\SCES\.ssh\id_rsa.pub" yyzhao@10.30.13.118:~/
 ```
@@ -89,6 +93,7 @@ scp "C:\Users\SCES\.ssh\id_rsa.pub" yyzhao@10.30.13.118:~/
 #### 服务器端配置
 在本地端打开一个新的`powershell`，在命令行中使用`ssh`连接服务器。
 由于ssh安全策略的限制，必须使用`chmod`命令修改ssh文件夹的读写权限，否则无法使用密钥登陆。
+
 ```shell
 ssh yyzhao@10.30.13.118
 mkdir .ssh
@@ -101,11 +106,13 @@ chmod 600 authorized_keys
 上述代码建立文件authorized_keys，并将公钥追加到authorized_keys文件中，并调整相关的读写权限。
 #### ssh配置测试
 经过上述操作，应该可以使用`ssh 别名`的方式实现免密登录。打开一个新的`powershell`，在本例中的测试代码为：
+
 ```powershell
 ssh cluster
 ```
 此处的cluster与《编辑ssh的配置文件 上传公钥到服务器》第3步中Host之后的自定义名称一致。如果此时显示登陆成功，不需要输入密码，则配置成功，成功登录的例子为：
-```
+
+```powershell
 PS C:\Users\SCES> ssh cluster
 Last login: Sat Sep 26 18:54:52 2020 from 100.64.240.108
 Rocks 6.1.1 (Sand Boa)
@@ -114,6 +121,7 @@ Profile built 08:26 14-May-2019
 Kickstarted 17:00 14-May-2019
 ```
 此时可以在本地端直接使用`scp`命令互传多个文件：
+
 ```powershell
 PS C:\Users\SCES> scp cluster:~/swap/clusterVaspQuickStart/* "C:\temp\"
 INCAR                                                          100% 4025    15.7KB/s   00:00

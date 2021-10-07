@@ -20,7 +20,7 @@ title:  开源库MLQM的Docker容器实现
 # 演示Demo
 环境需求: Docker
 
-## 构建MLQM库的Dcoker镜像
+## 构建MLQM库的Docker镜像
 
 ```shell
 docker pull tensorflow/tensorflow:latest-gpu

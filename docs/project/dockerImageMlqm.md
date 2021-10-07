@@ -5,7 +5,7 @@ title:  开源库MLQM的Docker容器实现
 ---
 
 # 背景
-机器学习量子蒙特卡洛(Machine Learning Quantum Montecarlo, MLQM)开源项目[https://github.com/Nuclear-Physics-with-Machine-Learning/MLQM/tree/master](https://github.com/Nuclear-Physics-with-Machine-Learning/MLQM/tree/master)在科研上具有很高的价值，但项目不支持包管理器的安装方式，且相关环境配置复杂。项目希望解决下列问题：
+机器学习量子蒙特卡洛(Machine Learning Quantum Montecarlo, MLQM)开源项目[（地址：https://github.com/Nuclear-Physics-with-Machine-Learning/MLQM/tree/master）](https://github.com/Nuclear-Physics-with-Machine-Learning/MLQM/tree/master)在科研上具有很高的价值，但项目不支持包管理器的安装方式，且相关环境配置复杂。项目希望解决下列问题：
 
  - 简化运行环境、包依赖关系的配置。
  - 跨平台可迁移性/扩展性。
@@ -71,11 +71,11 @@ cd ./MLQM
 python bin/stochastic_reconfiguration.py run_id=MyTestRun
 ```
 
-你可以[在这里](./dockerImageMlqmInstallInstruction)找到更加详细的安装指南。
+你可以[在这里找到更加详细的安装指南](./dockerImageMlqmInstallInstruction)。
 
 * * *
 
 # 技术栈
-shell，powershell
+Docker
 
 ### [back](/)

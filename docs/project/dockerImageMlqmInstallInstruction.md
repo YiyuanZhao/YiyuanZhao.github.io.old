@@ -104,7 +104,32 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-After installing docker, type `docker -v`, if it returns version information, this step is completed.
+Then start docker service:
+
+```shell
+service docker start
+```
+
+You may need to type your account password during setup. Note that this step is necessary for Linux (e.g. Ubuntu). For Mac/Windows users you should start Docker App instead.
+
+
+After installing docker, type `docker ps -a`, if it works fine, this step is completed.
+
+If the docker returns messages like:
+
+```
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.35/containers/create: dial unix /var/run/docker.sock: connect: permission denied. See 'docker run --help'.
+```
+
+You should add your current account to the docker group to get access:
+
+```shell
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+This issue could be found on [stackoverflow](https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue). Run `docker ps -a` again to validate modification.
 
 ## Build the Docker Image
 
@@ -113,7 +138,7 @@ First, pull the official `Tensorflow` docker image:
 docker pull tensorflow/tensorflow:latest-gpu
 ```
 
-Then, build our own MLQM image with Dockerfile. You may use the following command to build the image:
+Create a empty directory and clone MLQM repository, the directory name is arbitary and here we use `mlqmImage`.
 
 ```shell
 cd ~
@@ -122,7 +147,7 @@ cd mlqmImage
 git clone https://github.com/Nuclear-Physics-with-Machine-Learning/MLQM.git
 ```
 
-Then copy the following codes into `Dockerfile`, this script will build image as root account.
+Then, build our own MLQM image with Dockerfile. Copy the following codes into `Dockerfile`, this script will build image as root account.
 
 ```Dockerfile
 cat >Dockerfile <<EOF
@@ -173,7 +198,7 @@ After build image successfully, one could type
 docker run -itd -v mlqmVolume:/mlqmVolume --name mlqmContainer mlqm:latest
 docker exec -it mlqmContainer /bin/bash
 ```
-to start a container and complete the setup of MLQM.
+to start a container. Then the setup of MLQM is completed.
 
 ## Validate setup
 
